@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Captal Skins</title>
+  <meta name="description" content="Monetarize suas skins de CS2 com segurança e agilidade!">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset e configurações globais */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #0D0D0D; color: #fff; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    
+    /* Navbar (Sticky) */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(13,13,13,0.9);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    .navbar .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+    }
+    .navbar .logo img { width: 30px; margin-right: 8px; }
+    .navbar ul {
+      display: flex;
+      list-style: none;
+    }
+    .navbar ul li { margin: 0 10px; }
+    .navbar ul li a { padding: 5px; }
+    .navbar a.whatsapp-btn {
+      background: #00FF88;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .menu-toggle { display: none; cursor: pointer; font-size: 1.5rem; }
+
+    /* Hero Section com Vídeo Background */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .hero video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 2;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero-content h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .hero-content .buttons a {
+      background: #00FF88;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .hero-content .buttons a:hover { background: #00e07f; }
+
+    /* Seção Como Funciona */
+    .como-funciona {
+      padding: 60px 20px;
+      background: #121212;
+      text-align: center;
+    }
+    .como-funciona h2 {
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+    .funciona-cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .funciona-card {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 8px;
+      width: 300px;
+    }
+    .funciona-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .como-funciona .whatsapp-btn {
+      margin-top: 20px;
+      background: #00FF88;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* Seção Marketplace de Skins */
+    .marketplace {
+      padding: 60px 20px;
+      background: #0D0D0D;
+    }
+    .marketplace h2 {
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+    .filters {
+      max-width: 1200px;
+      margin: 0 auto 20px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .filters select, .filters input[type="range"] {
+      padding: 5px;
+      margin: 5px;
+      background: #1e1e1e;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+    }
+    .skins-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .skin-card {
+      background: #1e1e1e;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .skin-card img { width: 100%; display: block; }
+    .skin-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+    .skin-card .card-content {
+      padding: 10px;
+      text-align: center;
+    }
+    .skin-card .card-content h3 { margin-bottom: 5px; font-size: 1.2rem; }
+    .skin-card .card-content p { margin-bottom: 10px; }
+    .skin-card .card-content a {
+      background: #00FF88;
+      padding: 5px 10px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    /* Seção Grupos de WhatsApp */
+    .grupos {
+      padding: 60px 20px;
+      background: #121212;
+      text-align: center;
+    }
+    .grupos h2 {
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+    .grupo-cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .grupo-card {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      padding: 20px;
+      border-radius: 8px;
+      width: 300px;
+      color: #fff;
+    }
+    .grupo-card h3 { margin-bottom: 10px; }
+    .grupo-card a {
+      background: #fff;
+      color: #25D366;
+      padding: 5px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    /* Seção Sobre Nós */
+    .sobre {
+      padding: 60px 20px;
+      background: #0D0D0D;
+      text-align: center;
+    }
+    .sobre h2 {
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+    .sobre .content {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .sobre .selos {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .sobre .selos span {
+      background: #1e1e1e;
+      padding: 10px 15px;
+      border-radius: 4px;
+    }
+    .sobre img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .sobre a {
+      background: #00FF88;
+      padding: 10px 20px;
+      border-radius: 4px;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    /* Rodapé */
+    footer {
+      background: #121212;
+      padding: 20px;
+      text-align: center;
+    }
+    footer .footer-logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    footer p { margin-bottom: 10px; }
+    footer .footer-links a {
+      margin: 0 5px;
+      font-size: 0.9rem;
+    }
+    footer .social-icons a {
+      margin: 0 5px;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 50%;
+      background: #1e1e1e;
+    }
+
+    /* Responsividade Mobile-First */
+    @media (max-width: 768px) {
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(13,13,13,0.9);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        padding: 10px;
+      }
+      .navbar ul.active { display: flex; }
+      .menu-toggle { display: block; }
+      .skins-grid { grid-template-columns: 1fr; }
+      .funciona-cards, .grupo-cards { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="sem-fundo.png" alt="Ícone Faca CS2">
+      <span>Captal Skins</span>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul id="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#como-funciona">Como Funciona</a></li>
+      <li><a href="#marketplace">Skins em Destaque</a></li>
+      <li><a href="#sobre">Sobre Nós</a></li>
+      <li><a href="#contato">Contato</a></li>
+      <li><a class="whatsapp-btn" href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20saber%20mais." target="_blank">Fale no WhatsApp</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <video autoplay muted loop>
+      <source src="video.mp4" type="video/mp4">
+      <source src="video.webm" type="video/webm">
+      Seu navegador não suporta o elemento de vídeo.
+    </video>
+    <div class="hero-content">
+      <h1>Monetarize suas skins de CS2 com segurança e agilidade!</h1>
+      <div class="buttons">
+        <a href="#marketplace">Ver Skins →</a>
+        <a href="#contato">Vender Agora →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Como Funciona -->
+  <section class="como-funciona" id="como-funciona">
+    <h2>Como Funciona</h2>
+    <div class="funciona-cards">
+      <div class="funciona-card">
+        <div class="icon">🔍🎨</div>
+        <p>Escolha sua skin</p>
+      </div>
+      <div class="funciona-card">
+        <div class="icon">💬</div>
+        <p>Fale no WhatsApp</p>
+      </div>
+      <div class="funciona-card">
+        <div class="icon">🔒💳</div>
+        <p>Finalize a compra</p>
+      </div>
+    </div>
+    <button class="whatsapp-btn" onclick="window.open('https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20vender%20minhas%20skins.', '_blank')">Fale no WhatsApp</button>
+  </section>
+
+  <!-- Marketplace de Skins -->
+  <section class="marketplace" id="marketplace">
+    <h2>Skins em Destaque</h2>
+    <div class="filters">
+      <select>
+        <option>Arma</option>
+        <option>AK-47</option>
+        <option>AWP</option>
+      </select>
+      <select>
+        <option>Raridade</option>
+        <option>Comum</option>
+        <option>Raro</option>
+        <option>Exclusivo</option>
+      </select>
+      <input type="range" min="0" max="1000" value="500">
+    </div>
+    <div class="skins-grid">
+      <div class="skin-card">
+        <img src="skin1.webp" alt="Skin 1">
+        <div class="card-content">
+          <h3>Skin 1</h3>
+          <p>R$100</p>
+          <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20comprar%20a%20skin%20Skin%201%20por%20R$100." target="_blank">Fale no WhatsApp</a>
+        </div>
+      </div>
+    <div class="skin-card">
+      <img src="skin2.webp" alt="Skin 2">
+      <div class="card-content">
+        <h3>Skin 2</h3>
+        <p>R$200</p>
+          <a href="" target="_blank">Fale no WhatsApp</a>
+        </div>
+      </div>
+      <!-- Mais cards podem ser adicionados -->
+    </div>
+  </section>
+
+  <!-- Grupos de WhatsApp / Contato -->
+  <section class="grupos" id="contato">
+    <h2>Grupos de WhatsApp</h2>
+    <div class="grupo-cards">
+      <div class="grupo-card">
+        <h3>Grupo VIP Sellers</h3>
+        <a href="https://chat.whatsapp.com/conviteVIP" target="_blank">Entrar no Grupo</a>
+      </div>
+      <div class="grupo-card">
+        <h3>Grupo Novatos</h3>
+        <a href="https://chat.whatsapp.com/conviteNovatos" target="_blank">Entrar no Grupo</a>
+      </div>
+      <div class="grupo-card">
+        <h3>Suporte Técnico</h3>
+        <a href="https://chat.whatsapp.com/conviteSuporte" target="_blank">Entrar no Grupo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Nós -->
+  <section class="sobre" id="sobre">
+    <h2>Por que escolher a Captal Skins?</h2>
+    <div class="content">
+      <p>Somos apaixonados por skins e por CS2. Nossa missão é oferecer transações seguras e um atendimento ágil via WhatsApp, garantindo a melhor experiência possível.</p>
+      <p>Com suporte 24h e transações protegidas, a Captal Skins é a escolha ideal para monetizar suas skins com confiança.</p>
+    </div>
+    <div class="selos">
+      <span>Transações seguras via WhatsApp</span>
+      <span>Suporte 24h</span>
+    </div>
+    <img src="equipe.jpg" alt="Equipe Captal Skins">
+    <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20saber%20mais." target="_blank">Fale no WhatsApp</a>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-logo">Captal Skins</div>
+    <p>Sua skin, nosso compromisso</p>
+    <div class="footer-links">
+      <a href="#">FAQ</a> |
+      <a href="#">Políticas</a> |
+      <a href="#">Termos de Uso</a>
+    </div>
+    <div class="social-icons">
+      <a href="https://wa.me/5511999999999" target="_blank">W</a>
+      <a href="https://instagram.com" target="_blank">I</a>
+      <a href="https://steamcommunity.com" target="_blank">S</a>
+    </div>
+    <p>Site Blindado | Certificado SSL</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
