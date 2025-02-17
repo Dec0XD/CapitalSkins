@@ -51,17 +51,7 @@
       height: 100vh;
       overflow: hidden;
     }
-    .hero video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-    }
+
     .hero::after {
       content: "";
       position: absolute;
@@ -330,16 +320,18 @@
 
   <!-- Hero Section -->
   <section class="hero" id="hero">
-    <video autoplay muted loop>
-      <source src="video.mp4" type="video/mp4">
-      <source src="video.webm" type="video/webm">
-      Seu navegador não suporta o elemento de vídeo.
-    </video>
+    
     <div class="hero-content">
       <h1>Monetarize suas skins de CS2 com segurança e agilidade!</h1>
       <div class="buttons">
         <a href="#marketplace">Ver Skins →</a>
         <a href="#contato">Vender Agora →</a>
+      </div>
+      <div>
+        <video width="600" controls poster="video-poster.jpg">
+          <source src="video.mp4" type="video/mp4">
+          Seu navegador não suporta o elemento de vídeo.
+        </video>
       </div>
     </div>
   </section>
@@ -446,9 +438,9 @@
       <a href="#">Termos de Uso</a>
     </div>
     <div class="social-icons">
-      <a href="https://wa.me/5511999999999" target="_blank">W</a>
-      <a href="https://instagram.com" target="_blank">I</a>
-      <a href="https://steamcommunity.com" target="_blank">S</a>
+    <a href="https://wa.me/5511999999999" target="_blank"><img src="whatsapp-icon.png" alt="WhatsApp" width="30" height="30"></a>
+    <a href="https://instagram.com" target="_blank"><img src="instagram-icon.png" alt="Instagram" width="30" height="30"></a>
+    <a href="https://steamcommunity.com" target="_blank"><img src="steam-icon2.png" alt="Steam" width="30" height="30"></a>
     </div>
     <p>Site Blindado | Certificado SSL</p>
   </footer>
