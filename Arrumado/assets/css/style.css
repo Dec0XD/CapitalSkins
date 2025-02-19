@@ -1,0 +1,206 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Fonte padrão do corpo */
+  body {
+    font-family: Arial, sans-serif;
+    background: #03061a; /* cor de fundo escura */
+    color: #dedddd; /* texto branco */
+  }
+  
+  /* Cabeçalho e Navegação */
+  header {
+    background-color: #03061a;
+  }
+  
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    position: relative;
+    z-index: 10;
+}
+
+.navbar img {
+    height: 80px; /* ajuste conforme necessário */
+    width: auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li a {
+    color: #dedddd;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #e67e22; /* cor de destaque no hover */
+}
+
+/* Especifica a cor laranja apenas para o link do WhatsApp */
+.whatsapp-btn {
+    color: #e67e22; /* Texto laranja */
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: color 0.3s;
+}
+
+/* Mantém o efeito de hover */
+.whatsapp-btn:hover {
+    color: #ff8c42; /* Um laranja mais claro no hover */
+}
+  
+/* Seção Hero */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem; /* espaçamento lateral */
+}
+
+.hero-texto {
+    flex: 1;
+    margin-right: 2rem;
+}
+
+.hero-texto h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-texto p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 600px;
+}
+
+.hero-imagem {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-imagem::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background-color: #e67e22; /* cor de destaque laranja */
+    z-index: 1;
+    border-radius: 50%; /* forma de mancha */
+    transform: scale(1.2); /* tamanho da mancha */
+    filter: blur(50px); /* efeito de borrão para parecer respingos de tinta */
+    opacity: 0.7; /* leve transparência */
+}
+
+.hero-imagem img {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Estilizando a seção de vídeo */
+.video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa a tela toda */
+    background-color: #030619; /* Fundo escuro */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Conteúdo do vídeo */
+.video-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    color: #ffffff; /* Texto branco */
+}
+
+/* Título */
+.video-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Vídeo com borda laranja */
+.video-content video {
+    border: 4px solid #e67e22; /* Borda laranja */
+    border-radius: 10px; /* Bordas arredondadas */
+    max-width: 100%; /* Responsivo */
+}
+
+/* Parágrafo */
+.video-content p {
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+
+/* Botão estilizado */
+.video-content button {
+    margin-top: 20px;
+    background-color: #6a0dad; /* Roxo */
+    color: #e67e22; /* Texto laranja */
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0px 4px 10px rgba(106, 13, 173, 0.5); /* Sombra roxa */
+}
+
+/* Efeito no hover do botão */
+.video-content button:hover {
+    background-color: #5c0ba3; /* Roxo mais escuro */
+    box-shadow: 0px 6px 14px rgba(106, 13, 173, 0.7);
+}
+
+  
+  /* Rodapé */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #131417;
+    margin-top: 2rem;
+  }
+
+  
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-texto {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+  
