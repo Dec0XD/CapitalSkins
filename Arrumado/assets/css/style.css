@@ -23,9 +23,11 @@
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
+    margin-top: 1rem;
     position: relative;
     z-index: 10;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.25), transparent, rgba(255, 255, 255, 0.1));
+    border-radius: 10px; /* Cantos arredondados */
 }
 
 .navbar img {
@@ -73,6 +75,7 @@
 /* Seção Hero */
 .hero {
     display: flex;
+    height: 80vh;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
@@ -123,13 +126,12 @@
     z-index: 2;
 }
 
-/* Estilizando a seção de vídeo */
 .video {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ocupa a tela toda */
-    background-color: #030619; /* Fundo escuro */
+    height: 100vh;
+    background: linear-gradient(to bottom, #030619 60%, #6a0dad 100%);
     text-align: center;
     padding: 20px;
 }
@@ -166,7 +168,7 @@
 .video-content button {
     margin-top: 20px;
     background-color: #6a0dad; /* Roxo */
-    color: #e67e22; /* Texto laranja */
+    color: #fa3d00; /* Texto laranja */
     font-size: 1.2rem;
     font-weight: bold;
     padding: 12px 24px;
@@ -174,7 +176,7 @@
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s;
-    box-shadow: 0px 4px 10px rgba(106, 13, 173, 0.5); /* Sombra roxa */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); /* Sombra preta apenas na parte de baixo */
 }
 
 /* Efeito no hover do botão */
@@ -183,24 +185,79 @@
     box-shadow: 0px 6px 14px rgba(106, 13, 173, 0.7);
 }
 
-  
-  /* Rodapé */
-  footer {
+/* Seção dos grupos */
+.grupos {
+    padding: 2rem 1rem;
+    background-color: #03061a;
+    color: #dedddd;
+    text-align: center;
+}
+
+.grupos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.grupo-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.grupo-card {
+    background-color: #131417;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.grupo-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.grupo-card a {
+    display: inline-block;
+    background-color: #e67e22;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.grupo-card a:hover {
+    background-color: #ff8c42;
+    transform: scale(1.05);
+}
+
+.grupo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Rodapé */
+footer {
     text-align: center;
     padding: 1rem;
     background-color: #131417;
     margin-top: 2rem;
-  }
+}
 
-  
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .hero {
-      flex-direction: column;
-      text-align: center;
+        flex-direction: column;
+        text-align: center;
     }
     .hero-texto {
-      margin-right: 0;
-      margin-bottom: 1rem;
+        margin-right: 0;
+        margin-bottom: 1rem;
     }
-  }
+    .grupo-cards {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
   
