@@ -1,86 +1,11 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Fonte padrão do corpo */
-  body {
-    font-family: Arial, sans-serif;
-    background: #03061a; /* cor de fundo escura */
-    color: #dedddd; /* texto branco */
-  }
-  
-  /* Cabeçalho e Navegação */
-  header {
-    background-color: #03061a;
-  }
-  
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-top: 1rem;
-    position: relative;
-    z-index: 10;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.25), transparent, rgba(255, 255, 255, 0.1));
-    border-radius: 10px; /* Cantos arredondados */
-}
-
-.navbar img {
-    height: 80px; /* ajuste conforme necessário */
-    width: auto;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-}
-
-.nav-links li a {
-    color: #dedddd;
-    text-decoration: none;
-    padding: 0.5rem;
-    transition: color 0.3s;
-}
-
-.nav-links li a:hover {
-    color: #e67e22; /* cor de destaque no hover */
-}
-
-/* Especifica a cor laranja apenas para o link do WhatsApp */
-.whatsapp-btn {
-    color: #e67e22; /* Texto laranja */
-    font-weight: bold;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: color 0.3s;
-}
-
-/* Mantém o efeito de hover */
-.whatsapp-btn:hover {
-    color: #ff8c42; /* Um laranja mais claro no hover */
-}
-  
 /* Seção Hero */
 .hero {
     display: flex;
-    height: 80vh;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 1rem; /* espaçamento lateral */
+    min-height: 80vh;
+    margin: 3rem 0;
+    padding: 0 2rem; /* Adicionado para afastar do limite da tela */
 }
 
 .hero-texto {
@@ -109,14 +34,14 @@
 .hero-imagem::before {
     content: '';
     position: absolute;
-    width: 300px;
-    height: 400px;
-    background-color: #e67e22; /* cor de destaque laranja */
+    width: 70%;
+    height: 85%;
+    background-color: #e67e22;
     z-index: 1;
-    border-radius: 50%; /* forma de mancha */
-    transform: scale(1.2); /* tamanho da mancha */
-    filter: blur(50px); /* efeito de borrão para parecer respingos de tinta */
-    opacity: 0.7; /* leve transparência */
+    border-radius: 100%;
+    transform: scale(1.2);
+    filter: blur(50px);
+    opacity: 0.7;
 }
 
 .hero-imagem img {
@@ -126,70 +51,83 @@
     z-index: 2;
 }
 
+
+
+/* Seção Vídeo */
 .video {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(to bottom, #030619 60%, #6a0dad 100%);
     text-align: center;
-    padding: 20px;
+    padding: 2rem 1rem;
 }
 
-/* Conteúdo do vídeo */
 .video-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 800px;
-    color: #ffffff; /* Texto branco */
+    width: 100%;
+    max-width: 1200px; /* Aumentado para telas maiores */
+    color: #ffffff;
 }
 
 /* Título */
 .video-content h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
-/* Vídeo com borda laranja */
-.video-content video {
-    border: 4px solid #e67e22; /* Borda laranja */
-    border-radius: 10px; /* Bordas arredondadas */
-    max-width: 100%; /* Responsivo */
+/* Vídeo responsivo */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1100px; /* Ajustável para telas grandes */
+    padding-bottom: 56.25%; /* Mantém proporção 16:9 */
+    overflow: hidden;
+    border-radius: 10px;
+    border: 4px solid #e67e22; /* Adicionado para borda */
 }
 
-/* Parágrafo */
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Texto abaixo do vídeo */
 .video-content p {
     margin-top: 15px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
-/* Botão estilizado */
+/* Botão */
 .video-content button {
     margin-top: 20px;
-    background-color: #6a0dad; /* Roxo */
-    color: #fa3d00; /* Texto laranja */
-    font-size: 1.2rem;
+    background-color: #6a0dad;
+    color: #fa3d00;
+    font-size: 1.5rem;
     font-weight: bold;
-    padding: 12px 24px;
+    padding: 14px 28px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); /* Sombra preta apenas na parte de baixo */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Efeito no hover do botão */
 .video-content button:hover {
-    background-color: #5c0ba3; /* Roxo mais escuro */
+    background-color: #5c0ba3;
     box-shadow: 0px 6px 14px rgba(106, 13, 173, 0.7);
 }
 
-/* Seção dos grupos */
+/* Seção Grupos */
 .grupos {
     padding: 2rem 1rem;
     background-color: #03061a;
-    color: #dedddd;
     text-align: center;
 }
 
@@ -238,26 +176,3 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Rodapé */
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #131417;
-    margin-top: 2rem;
-}
-
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero-texto {
-        margin-right: 0;
-        margin-bottom: 1rem;
-    }
-    .grupo-cards {
-        flex-direction: column;
-        gap: 1rem;
-    }
-}
-  

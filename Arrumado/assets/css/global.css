@@ -1,0 +1,27 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonte e cores globais */
+body {
+    font-family: 'League Gothic', sans-serif;
+    background: #03061a;
+    color: #dedddd;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #131417;
+    margin-top: 2rem;
+}

@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <title>Capital Skins</title>
   <!-- Link para o CSS -->
+  <link rel="stylesheet" href="assets/css/global.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/navbar.css" />
+  <link rel="stylesheet" href="assets/css/media-queries.css" />
+  <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
   <!-- Meta tag para responsividade -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -21,7 +25,10 @@
             <li><a href="#">Nossa Comunidade</a></li>
             <li><a href="#">Sobre Nós</a></li>
     </ul>
-    <a href="#" class="whatsapp-btn">Fale no WhatsApp</a>
+    <a href="#" class="whatsapp-btn">
+      <img src="assets/img/whatsapp-icon.png" alt="WhatsApp Icon" />
+      Fale no WhatsApp
+    </a>
     </nav>
 </header>
 
@@ -44,20 +51,21 @@
       </div>
     </section>
 
-    <!-- Seção de Vídeo -->
-    <section class="video" id="video">
-      <div class="video-content">
-        <h1>Monetarize suas skins de CS2 com segurança e agilidade!</h1>
-        <div>
-          <video width="600" controls autoplay muted poster="assets/img/video-poster.jpg">
-            <source src="assets/video/skins.mp4" type="video/mp4">
-            Seu navegador não suporta o elemento de vídeo.
-          </video>
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <button>Saiba Mais</button>
+  <!-- Seção de Vídeo -->
+  <section class="video" id="video">
+    <div class="video-content">
+      <h1>Monetarize suas skins de CS2 com segurança e agilidade!</h1>
+      <div class="video-wrapper">
+        <iframe width="600" height="315" 
+          src="https://www.youtube.com/embed/y26aUIzN7wk?autoplay=1" 
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
       </div>
-    </section>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <button>Saiba Mais</button>
+    </div>
+  </section>
 
       <!-- Grupos de WhatsApp / Contato -->
   <section class="grupos" id="contato">
