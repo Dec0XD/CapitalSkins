@@ -14,14 +14,36 @@
 }
 
 .hero-texto h1 {
+    color: #fa3d00;
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
 .hero-texto p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 1.5;
-    max-width: 600px;
+    max-width: auto;
+    color: #dedddd;
+}
+
+.hero-texto button {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    margin-top: 20px;
+    background-image: url('../img/3.png');
+    background-size: 560%;
+    background-position: center;
+    color: #dedddd;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.hero-texto button:hover {
+    opacity: 0.9;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
 }
 
 .hero-imagem {
@@ -51,10 +73,8 @@
     z-index: 2;
 }
 
-
-
 /* Seção Vídeo */
-.video {
+.rifas {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,7 +84,7 @@
     padding: 2rem 1rem;
 }
 
-.video-content {
+.rifas-content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,13 +94,13 @@
 }
 
 /* Título */
-.video-content h1 {
+.rifas-content h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
 /* Vídeo responsivo */
-.video-wrapper {
+.rifas-wrapper {
     position: relative;
     width: 100%;
     max-width: 1100px; /* Ajustável para telas grandes */
@@ -90,7 +110,7 @@
     border: 4px solid #e67e22; /* Adicionado para borda */
 }
 
-.video-wrapper iframe {
+.rifas-wrapper iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -99,29 +119,29 @@
 }
 
 /* Texto abaixo do vídeo */
-.video-content p {
+.rifas-content p {
     margin-top: 15px;
     font-size: 1.5rem;
 }
 
-/* Botão */
-.video-content button {
-    margin-top: 20px;
-    background-color: #6a0dad;
-    color: #fa3d00;
+.rifas-content button {
     font-size: 1.5rem;
-    font-weight: bold;
-    padding: 14px 28px;
+    padding: 1rem 2rem;
+    margin-top: 20px;
+    background-image: url('../img/3.png');
+    background-size: 610%;
+    background-position: center;
+    color: #dedddd;
     border: none;
-    border-radius: 8px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     transition: all 0.3s;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
-.video-content button:hover {
-    background-color: #5c0ba3;
-    box-shadow: 0px 6px 14px rgba(106, 13, 173, 0.7);
+.rifas-content button:hover {
+    opacity: 0.9;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
 }
 
 /* Seção Grupos */
@@ -176,3 +196,209 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
+
+/* Estilização da Seção de Vídeo */
+.video-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to top, #030619 60%, #6a0dad 100%);
+    padding: 2rem;
+}
+
+.video-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.3); /* Fundo branco opaco */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilização do texto */
+.video-text {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.video-text h1 {
+    font-size: 2.5rem;
+    color: #fa3d00;
+    margin-bottom: 1rem;
+}
+
+.video-text p {
+    font-size: 1.5rem;
+    color: #dedddd;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilização do vídeo */
+.video-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-content iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 300px; /* Garante um tamanho mínimo */
+    aspect-ratio: 16 / 9; /* Mantém a proporção do vídeo */
+    border-radius: 8px;
+}
+
+.video-wrapper {
+    width: 100%;
+    max-width: 500px;
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 280px;
+    border-radius: 8px;
+}
+
+
+/* Seção Comunidade */
+.comunidade {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.comunidade h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+/* Container branco opaco com borda */
+.comunidade-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+/* Estilo dos cards */
+.comunidade-card {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid #dedddd; /* Borda roxa nos cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    max-width: 280px;
+    width: 100%;
+}
+
+/* Imagem dentro do card com borda */
+.comunidade-card img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid #dedddd;
+}
+
+.comunidade-card h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: #dedddd;
+}
+
+.comunidade-card a {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    margin-top: 20px;
+    background-image: url('../img/3.png');
+    background-size: 860%;
+    background-position: center;
+    color: #dedddd;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.comunidade-card a:hover {
+    opacity: 0.9;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+
+.comunidade-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.comunidade-botao button {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    margin-top: 20px;
+    background-image: url('../img/3.png');
+    background-size: 610%;
+    background-position: center;
+    color: #dedddd;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.comunidade-botao button:hover {
+    opacity: 0.9;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+
+/* Seção Sobre Nós */
+.sobre-nos {
+    text-align: center;
+    padding: 4rem 2rem;
+    border-radius: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Título */
+.sobre-nos h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: #dedddd;
+}
+
+/* Container das imagens */
+.sobre-nos div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Imagens */
+.sobre-nos img {
+    width: 30%;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sobre-nos div {
+        flex-direction: column; /* Empilha as imagens em telas pequenas */
+    }
+
+    .sobre-nos img {
+        width: 90%; /* Reduz a largura das imagens em telas menores */
+        max-width: 100%;
+    }
+}

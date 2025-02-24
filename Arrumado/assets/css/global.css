@@ -9,7 +9,6 @@
 body {
     font-family: 'League Gothic', sans-serif;
     background: #03061a;
-    color: #dedddd;
 }
 
 .container {
@@ -22,6 +21,8 @@ body {
 footer {
     text-align: center;
     padding: 1rem;
+    font-size: 1.2rem;
     background-color: #131417;
+    color: #dedddd;
     margin-top: 2rem;
 }
