@@ -1,66 +1,23 @@
-/* Media Queries */
-
-/* Telas pequenas */
+/* Ajustes para telas menores */
 @media (max-width: 768px) {
-    .navbar {
+    .video-container {
         flex-direction: column;
-        gap: 1rem;
+        padding: 1rem;
     }
-    .nav-links {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        min-height: auto;
-        padding: 2rem 0;
-    }
-    .hero-texto {
-        margin: 0 0 1.5rem 0;
-    }
-    .hero-imagem::before {
-        width: 200px;
-        height: 250px;
-        transform: scale(1);
-    }
-    .grupo-cards {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .video {
-        min-height: auto;
-    }
-}
 
-/* Telas médias */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .hero-texto h1 {
-        font-size: 2.5rem;
+    .video-text {
+        padding-right: 0;
     }
-    .hero-texto p {
-        font-size: 1rem;
-    }
-    .video-content h1 {
-        font-size: 1.5rem;
-    }
-    .video-content p {
-        font-size: 1rem;
-    }
-}
 
-/* Telas grandes */
-@media (min-width: 1025px) {
-    .hero-texto h1 {
-        font-size: 3.5rem;
+    .video-text h1 {
+        font-size: 2rem;
     }
-    .hero-texto p {
-        font-size: 1.5rem;
+
+    .video-text p {
+        font-size: 1.2rem;
     }
-    .video-content h1 {
-        font-size: 2.5rem;
-    }
-    .video-content p {
-        font-size: 1.5rem;
+
+    .video-content iframe {
+        height: auto;
     }
 }

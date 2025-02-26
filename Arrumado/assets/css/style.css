@@ -20,6 +20,7 @@
 }
 
 .hero-texto p {
+    font-family: "Noto Serif Armenian", serif;
     font-size: 1.5rem;
     line-height: 1.5;
     max-width: auto;
@@ -207,32 +208,37 @@
     padding: 2rem;
 }
 
+/* Torna o container flexível e responsivo */
 .video-container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    max-width: 1100px;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.3); /* Fundo branco opaco */
+    justify-content: center;
+    width: 120%;
+    max-width: 1800px;
+    background: rgba(255, 255, 255, 0.3);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    gap: 2rem;
 }
 
 /* Estilização do texto */
 .video-text {
     flex: 1;
+    min-width: 400px;
     padding-right: 2rem;
 }
 
 .video-text h1 {
-    font-size: 2.5rem;
-    color: #fa3d00;
+    font-size: 3rem;
+    color: #e67e22;
     margin-bottom: 1rem;
 }
 
 .video-text p {
-    font-size: 1.5rem;
+    font-family: "Noto Serif Armenian", serif;
+    font-size: 1.75rem;
     color: #dedddd;
     margin-bottom: 1.5rem;
 }
@@ -243,80 +249,81 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    max-width: 1600px;
+}
+
+/* Ajusta o tamanho do wrapper do vídeo */
+.video-wrapper {
+    width: 100%;
+    max-width: 1200px; /* Aumenta esse valor para um vídeo maior */
 }
 
 .video-content iframe {
     width: 100%;
-    height: 100%;
-    min-height: 300px; /* Garante um tamanho mínimo */
-    aspect-ratio: 16 / 9; /* Mantém a proporção do vídeo */
+    aspect-ratio: 16 / 9;
     border-radius: 8px;
 }
-
-.video-wrapper {
-    width: 100%;
-    max-width: 500px;
-}
-
-.video-wrapper iframe {
-    width: 100%;
-    height: 280px;
-    border-radius: 8px;
-}
-
 
 /* Seção Comunidade */
 .comunidade {
     text-align: center;
     padding: 4rem 2rem;
-}
-
-.comunidade h2 {
+  }
+  
+  .comunidade h2 {
     font-size: 2.5rem;
     color: white;
     margin-bottom: 2rem;
-}
-
-/* Container branco opaco com borda */
-.comunidade-container {
+  }
+  
+  /* Container dos itens */
+  .comunidade-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
-    flex-wrap: wrap;
     padding: 2rem;
     max-width: 2000px;
     margin: 0 auto;
-}
-
-/* Estilo dos cards */
-.comunidade-card {
+  }
+  
+  /* Agrupa o card com o link */
+  .comunidade-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Estilo dos cards */
+  .comunidade-card {
     background: rgba(255, 255, 255, 0.3);
-    padding: 1rem;
     border-radius: 8px;
-    border: 2px solid #dedddd; /* Borda roxa nos cards */
+    border: 2px solid #dedddd;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
     max-width: 280px;
     width: 100%;
-}
-
-/* Imagem dentro do card com borda */
-.comunidade-card img {
+  }
+  
+  .comunidade-card img {
     width: 100%;
     border-radius: 8px;
     object-fit: cover;
     border: 2px solid #dedddd;
-}
-
-.comunidade-card h3 {
+  }
+  
+  .comunidade-card h3 {
     font-size: 1.5rem;
     margin: 1rem 0;
     color: #dedddd;
-}
-
-.comunidade-card a {
+  }
+  
+  /* Estilo dos links */
+  .comunidade-item > a {
     font-size: 1.5rem;
+    text-decoration: none;
     padding: 1rem 2rem;
     margin-top: 20px;
     background-image: url('../img/3.png');
@@ -328,39 +335,18 @@
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     transition: all 0.3s;
-}
-
-.comunidade-card a:hover {
+  }
+  
+  .comunidade-item > a:hover {
     opacity: 0.9;
     box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
-}
-
-
-.comunidade-card:hover {
+  }
+  
+  .comunidade-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.comunidade-botao button {
-    font-size: 1.5rem;
-    padding: 1rem 2rem;
-    margin-top: 20px;
-    background-image: url('../img/3.png');
-    background-size: 610%;
-    background-position: center;
-    color: #dedddd;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.comunidade-botao button:hover {
-    opacity: 0.9;
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
-}
-
+  }
+  
 
 /* Seção Sobre Nós */
 .sobre-nos {

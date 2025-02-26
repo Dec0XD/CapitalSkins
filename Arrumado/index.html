@@ -16,20 +16,33 @@
 
   <!-- Cabeçalho / Menu de Navegação -->
 <header>
-    <nav class="navbar">
-            <img src="assets/img/Captal_branco-sem-fundo.png" alt="Dois soldados em pose tática" />
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Sites em Destaque</a></li>
-            <li><a href="#">Como Funciona</a></li>
-            <li><a href="#">Nossa Comunidade</a></li>
-            <li><a href="#">Sobre Nós</a></li>
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="assets/img/Captal_branco-sem-fundo.png" alt="Logo" />
+    </div>
+  
+    <!-- Toggle para menu mobile -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+    </label>
+  
+    <!-- Menu de Navegação -->
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Sites em Destaque</a></li>
+      <li><a href="#">Como Funciona</a></li>
+      <li><a href="#">Nossa Comunidade</a></li>
+      <li><a href="#">Sobre Nós</a></li>
     </ul>
+  
+    <!-- Botão do WhatsApp -->
     <a href="#" class="whatsapp-btn">
-      <img src="assets/img/whatsapp-icon.png" alt="WhatsApp Icon" />
+      <img src="assets/img/whatsapp-icon.png" alt="WhatsApp" />
       Fale no WhatsApp
     </a>
-    </nav>
+  </nav>  
 </header>
 
   <!-- Seção Principal (Hero) -->
@@ -85,7 +98,7 @@
         </div>
         <div class="video-content">
             <div class="video-wrapper">
-                <iframe width="600" height="315" 
+                <iframe
                     src="https://www.youtube.com/embed/y26aUIzN7wk?autoplay=0" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -97,41 +110,47 @@
   </section>
 
 <!-- Seção Comunidade -->
-  <section class="comunidade" id="contato">
+<section class="comunidade" id="contato">
   <h2>Faça parte da nossa comunidade</h2>
-  
   <div class="comunidade-container">
+    <div class="comunidade-item">
       <div class="comunidade-card">
-          <img src="assets/img/Personagens.png" alt="Grupo VIP Sellers">
-          <h3>RIFAS</h3>
-          <a href="https://chat.whatsapp.com/conviteVIP" target="_blank">Entrar no Grupo</a>
+        <img src="assets/img/novas-capasrifas.png" alt="Grupo VIP Sellers">
+        <h3>RIFAS</h3>
       </div>
-
-      <div class="comunidade-card">
-          <img src="assets/img/Personagens.png" alt="Grupo Novatos">
-          <h3>PRÊMIOS</h3>
-          <a href="https://chat.whatsapp.com/conviteNovatos" target="_blank">Entrar no Grupo</a>
-      </div>
-
-      <div class="comunidade-card">
-          <img src="assets/img/Personagens.png" alt="Suporte Técnico">
-          <h3>TRADES</h3>
-          <a href="https://chat.whatsapp.com/conviteSuporte" target="_blank">Entrar no Grupo</a>
-      </div>
-
-      <div class="comunidade-card">
-          <img src="assets/img/Personagens.png" alt="Suporte Técnico">
-          <h3>PROMOÇÕES</h3>
-          <a href="https://chat.whatsapp.com/conviteSuporte" target="_blank">Entrar no Grupo</a>
-      </div>
-
-      <div class="comunidade-card">
-          <img src="assets/img/Personagens.png" alt="Suporte Técnico">
-          <h3>RESENHA</h3>
-          <a href="https://chat.whatsapp.com/conviteSuporte" target="_blank">Entrar no Grupo</a>
-      </div>
+      <a href="https://chat.whatsapp.com/conviteVIP" target="_blank">Entrar no Grupo</a>
     </div>
-  </section>
+    <div class="comunidade-item">
+      <div class="comunidade-card">
+        <img src="assets/img/novas-capaspremios.png" alt="Grupo Novatos">
+        <h3>PRÊMIOS</h3>
+      </div>
+      <a href="https://chat.whatsapp.com/conviteNovatos" target="_blank">Entrar no Grupo</a>
+    </div>
+    <div class="comunidade-item">
+      <div class="comunidade-card">
+        <img src="assets/img/novas-capastrades.png" alt="Suporte Técnico">
+        <h3>TRADES</h3>
+      </div>
+      <a href="https://chat.whatsapp.com/conviteSuporte" target="_blank">Entrar no Grupo</a>
+    </div>
+    <div class="comunidade-item">
+      <div class="comunidade-card">
+        <img src="assets/img/novas-capaspromoções.png" alt="Suporte Técnico">
+        <h3>PROMOÇÕES</h3>
+      </div>
+      <a href="https://chat.whatsapp.com/conviteSuporte" target="_blank">Entrar no Grupo</a>
+    </div>
+    <div class="comunidade-item">
+      <div class="comunidade-card">
+        <img src="assets/img/novas-capasresenha.png" alt="Suporte Técnico">
+        <h3>RESENHA</h3>
+      </div>
+      <a href="https://chat.whatsapp.com/conviteSuporte" target="_blank">Entrar no Grupo</a>
+    </div>
+  </div>
+</section>
+
 
   <!-- Seção Sobre-Nós -->
    <section>
