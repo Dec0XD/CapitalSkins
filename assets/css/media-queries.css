@@ -1,10 +1,10 @@
 /* Responsividade do navbar para telas menores */
 @media screen and (max-width: 768px) {
     .navbar {
-      flex-direction: row; /* Muda para coluna para expandir verticalmente */
-      align-items: center; /* Alinha tudo à esquerda */
+      flex-direction: row; /* Mantido em row conforme seu código */
+      align-items: center; /* Alinha tudo ao centro */
       padding: 1rem;
-      justify-content: space-around; /* Remove space-between para crescer com o menu */
+      justify-content: space-around; /* Mantido conforme seu código */
     }
   
     /* Container para logo e hamburguer */
@@ -18,10 +18,10 @@
     .nav-toggle-label {
       display: block;
       cursor: pointer;
-      width: 40px;
-      height: 30px;
+      width: 20px; /* Reduzido para 20px (você já ajustou isso) */
+      height: 15px; /* Reduzido de 30px para 15px para ficar proporcional */
       position: relative;
-      order: 1; /* Hamburguer à direita */
+      order: -1; /* Hamburguer à direita */
     }
   
     .nav-toggle-label span,
@@ -29,7 +29,7 @@
     .nav-toggle-label span::after {
       content: '';
       background: white;
-      height: 4px;
+      height: 2px; /* Reduzido de 4px para 2px para ficar proporcional */
       width: 100%;
       position: absolute;
       left: 0;
@@ -42,11 +42,11 @@
     }
   
     .nav-toggle-label span::before {
-      top: -12px;
+      top: -6px; /* Reduzido de -12px para -6px para ajustar ao novo tamanho */
     }
   
     .nav-toggle-label span::after {
-      top: 12px;
+      top: 6px; /* Reduzido de 12px para 6px para ajustar ao novo tamanho */
     }
   
     /* Logo à esquerda */
@@ -73,8 +73,7 @@
     .nav-toggle:checked ~ .nav-links {
       display: flex;
     }
-  }
-
+}
 /* Media Queries para Responsividade */
 @media (max-width: 1100px) {
     .rifas, .video-section {
@@ -96,43 +95,59 @@
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-        min-height: auto; /* Ajustado para se adaptar ao conteúdo */
+        min-height: auto; /* Ajusta a altura ao conteúdo */
+        padding: 1rem;
+        position: relative; /* Para posicionar o botão */
     }
 
     .hero-texto {
         margin-right: 0;
-        max-width: 90%;
+        text-align: center; /* Centraliza o texto */
+        background: url('../img/Personagens.png') no-repeat center center; /* Imagem como fundo */
+        background-size: contain; /* Mostra a imagem completa sem corte */
+        padding: 2rem; /* Espaçamento interno para legibilidade */
+        color: #ffffff; /* Ajusta cor do texto para contraste */
+        position: relative;
+        width: 100%; /* Garante que o fundo ocupe toda a largura */
+        min-height: 400px; /* Altura mínima para exibir a imagem completa */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centraliza verticalmente o conteúdo */
+        align-items: center; /* Centraliza horizontalmente o conteúdo */
     }
 
-    .hero-texto h1 {
-        font-size: 2.2rem;
+    .hero-texto::before {
+        content: '';
+        position: absolute;
+        width: 70%; /* Mesma largura do efeito original */
+        height: 85%; /* Mesma altura do efeito original */
+        background-color: #e67e22; /* Cor laranja */
+        z-index: -1; /* Fica atrás do texto */
+        border-radius: 100%;
+        transform: scale(1.2);
+        filter: blur(50px); /* Desfoque */
+        opacity: 0.7; /* Transparência */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.2); /* Centraliza e aplica escala */
     }
 
-    .hero-texto p {
-        font-size: 1.2rem;
-        max-width: 100%;
+    .hero-texto h1, .hero-texto p {
+        color: #ffffff; /* Garante legibilidade no fundo */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Sombra para contraste */
+        z-index: 2;
     }
 
     .hero-texto button {
-        font-size: 1.3rem;
-        padding: 0.2rem 1.5rem;
+        display: block;
+        margin: 20px auto 0; /* Centraliza o botão horizontalmente */
+        position: relative; /* Mantém no fluxo normal */
+        z-index: 2;
     }
 
     .hero-imagem {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: none; /* Esconde a imagem separada, já que ela está no fundo */
     }
-
-    .hero-imagem img {
-        max-width: 80%;
-        height: auto;
-    }
-
     .rifas-content h1 {
         font-size: 2rem;
     }
@@ -175,26 +190,25 @@
 
 @media (max-width: 480px) {
     .hero {
-        min-height: auto;
         padding: 1rem;
     }
 
+    .hero-texto {
+        padding: 1.5rem; /* Reduz padding para telas menores */
+        background-size: contain; /* Ajusta o tamanho da imagem de fundo */
+    }
+
     .hero-texto h1 {
-        font-size: 1.8rem;
+        font-size: 2rem; /* Reduz tamanho da fonte */
     }
 
     .hero-texto p {
-        font-size: 1rem;
+        font-size: 1.2rem; /* Reduz tamanho da fonte */
     }
 
     .hero-texto button {
-        font-size: 1rem;
-        padding: 0.6rem 1.2rem;
-        margin-top: 10px;
-    }
-
-    .hero-imagem img {
-        max-width: 70%;
+        font-size: 1.2rem; /* Reduz tamanho do botão */
+        padding: 0.8rem 1.5rem;
     }
 
     .rifas {
