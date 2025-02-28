@@ -84,11 +84,16 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to bottom, #030619 60%, #6a0dad 100%);
+    background: linear-gradient(to bottom, #030619 60%, #6a0dad 100%), url('../img/4.png') no-repeat center center/cover; /* Gradiente sobre a imagem */
+    background-size: cover; /* Garante que a imagem cubra toda a seção */
+    background-position: center; /* Centraliza a imagem */
+    background-blend-mode: overlay; /* Mistura o gradiente com a imagem (ajustável) */
     text-align: center;
     padding: 2rem 1rem;
+    position: relative;
 }
 
+/* Mantém o conteúdo legível com fundo semi-transparente (opcional) */
 .rifas-content {
     display: flex;
     flex-direction: column;
@@ -96,6 +101,8 @@
     width: 100%;
     max-width: 1200px; /* Aumentado para telas maiores */
     color: #ffffff;
+    padding: 2rem; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
 }
 
 /* Título */
@@ -147,6 +154,56 @@
 .rifas-content button:hover {
     opacity: 0.9;
     box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Media Query para corrigir brechas em telas menores que 1100px */
+@media (max-width: 1100px) {
+    .rifas, .video-section {
+        background-size: auto 100%; /* Ajusta a altura da imagem para 100% da seção */
+        background-position: center; /* Mantém o centro da imagem visível */
+        min-height: 100vh; /* Garante que a seção ocupe toda a altura da tela */
+    }
+
+    /* Ajusta o conteúdo para evitar overflow */
+    .rifas-content, .video-container {
+        width: 90%; /* Reduz a largura para caber bem na tela */
+        max-width: none; /* Remove o limite máximo para se adaptar */
+    }
+
+    .video-container {
+        width: 100%; /* Corrige o width: 120% que pode causar problemas */
+    }
+}
+
+/* Media Queries para responsividade adicional */
+@media (max-width: 768px) {
+    .rifas-content h1 {
+        font-size: 2rem;
+    }
+
+    .rifas-content p {
+        font-size: 1.2rem;
+    }
+
+    .rifas-content button {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .rifas-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .rifas-content p {
+        font-size: 1rem;
+    }
+
+    .rifas-content button {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+    }
 }
 
 /* Seção Grupos */
@@ -208,7 +265,10 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to top, #030619 60%, #6a0dad 100%);
+    background: linear-gradient(to top, #030619 60%, #6a0dad 100%), url('../img/4.png') no-repeat center center/cover; /* Gradiente sobre a imagem */
+    background-size: cover; /* Garante que a imagem cubra toda a seção */
+    background-position: center; /* Centraliza a imagem */
+    background-blend-mode: overlay; /* Mistura o gradiente com a imagem (ajustável) */
     padding: 2rem;
 }
 
@@ -273,6 +333,44 @@
     border-radius: 8px;
 }
 
+/* Media Queries para responsividade adicional */
+@media (max-width: 768px) {
+    .video-text h1 {
+        font-size: 2rem;
+    }
+
+    .video-text p {
+        font-size: 1.25rem;
+    }
+
+    .video-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .video-content {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-text {
+        min-width: 100%;
+        padding: 1rem;
+    }
+
+    .video-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .video-text p {
+        font-size: 1rem;
+    }
+
+    .video-wrapper {
+        max-width: 100%;
+    }
+}
 /* Seção Comunidade */
 .comunidade {
     text-align: center;
