@@ -1,20 +1,27 @@
 /* Responsividade do navbar para telas menores */
 @media screen and (max-width: 768px) {
     .navbar {
-      flex-direction: row; /* Mantém em linha para hamburguer e logo */
-      justify-content: space-between; /* Hamburguer à esquerda, logo à direita */
-      align-items: center;
+      flex-direction: row; /* Muda para coluna para expandir verticalmente */
+      align-items: center; /* Alinha tudo à esquerda */
       padding: 1rem;
+      justify-content: space-around; /* Remove space-between para crescer com o menu */
     }
   
-    /* Menu hamburguer à esquerda */
+    /* Container para logo e hamburguer */
+    .navbar-top {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  
+    /* Menu hamburguer à direita */
     .nav-toggle-label {
       display: block;
       cursor: pointer;
       width: 40px;
       height: 30px;
       position: relative;
-      order: -1; /* Garante que o hamburguer fique antes do logo */
+      order: 1; /* Hamburguer à direita */
     }
   
     .nav-toggle-label span,
@@ -42,24 +49,24 @@
       top: 12px;
     }
   
-    /* Logo à direita */
+    /* Logo à esquerda */
     .logo {
-      order: 1; /* Coloca o logo depois do hamburguer */
+      order: 0; /* Logo à esquerda */
     }
   
     .logo img {
-      max-height: 120px;
+      max-height: 80px;
     }
   
-    /* Esconde o menu por padrão */
+    /* Menu escondido por padrão */
     .nav-links {
       display: none;
       flex-direction: column;
       align-items: center;
       width: 100%;
-      position: static; /* Volta ao fluxo normal */
+      position: static; /* Volta ao fluxo normal para expandir a navbar */
       transform: none; /* Remove centralização */
-      margin-top: 1rem; /* Espaço entre o header e o menu */
+      padding: 1rem 0; /* Espaçamento interno */
     }
   
     /* Exibe o menu quando o toggle for ativado */
