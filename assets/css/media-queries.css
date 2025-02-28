@@ -1,27 +1,30 @@
 /* Responsividade do navbar para telas menores */
 @media screen and (max-width: 768px) {
     .navbar {
-      flex-direction: row; /* Mantido em row conforme seu código */
-      align-items: center; /* Alinha tudo ao centro */
-      padding: 1rem;
-      justify-content: space-around; /* Mantido conforme seu código */
+      flex-direction: row; /* Coluna para expandir verticalmente */
+      align-items: center; /* Centraliza tudo */
+      padding: 2rem; /* Mantido conforme seu código */
+      justify-content: flex-start; /* Começa do topo */
+      position: relative;
     }
   
     /* Container para logo e hamburguer */
     .navbar-top {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-between; /* Hamburguer à esquerda, logo ao centro */
       width: 100%;
+      align-items: center;
+      padding-bottom: 1rem; /* Espaço entre topo e menu */
     }
   
-    /* Menu hamburguer à direita */
+    /* Menu hamburguer à esquerda */
     .nav-toggle-label {
       display: block;
       cursor: pointer;
-      width: 20px; /* Reduzido para 20px (você já ajustou isso) */
-      height: 15px; /* Reduzido de 30px para 15px para ficar proporcional */
+      width: 20px; /* Tamanho reduzido mantido */
+      height: 15px; /* Tamanho reduzido mantido */
       position: relative;
-      order: -1; /* Hamburguer à direita */
+      order: 0; /* Hamburguer à esquerda */
     }
   
     .nav-toggle-label span,
@@ -29,7 +32,7 @@
     .nav-toggle-label span::after {
       content: '';
       background: white;
-      height: 2px; /* Reduzido de 4px para 2px para ficar proporcional */
+      height: 2px; /* Espessura reduzida mantida */
       width: 100%;
       position: absolute;
       left: 0;
@@ -42,16 +45,21 @@
     }
   
     .nav-toggle-label span::before {
-      top: -6px; /* Reduzido de -12px para -6px para ajustar ao novo tamanho */
+      top: -6px; /* Ajustado para tamanho reduzido */
     }
   
     .nav-toggle-label span::after {
-      top: 6px; /* Reduzido de 12px para 6px para ajustar ao novo tamanho */
+      top: 6px; /* Ajustado para tamanho reduzido */
     }
   
-    /* Logo à esquerda */
+    /* Logo centralizado no topo */
     .logo {
-      order: 0; /* Logo à esquerda */
+      order: 1; /* Logo depois do hamburguer */
+      position: absolute;
+      top: 0.1rem; /* Alinha ao topo com o padding da navbar */
+      left: 50%;
+      transform: translateX(-50%); /* Centraliza horizontalmente */
+      z-index: 2; /* Acima do menu */
     }
   
     .logo img {
@@ -64,16 +72,17 @@
       flex-direction: column;
       align-items: center;
       width: 100%;
-      position: static; /* Volta ao fluxo normal para expandir a navbar */
+      position: static; /* No fluxo normal para expandir o fundo */
       transform: none; /* Remove centralização */
-      padding: 1rem 0; /* Espaçamento interno */
+      padding: 2rem 0; /* Espaçamento interno */
     }
   
     /* Exibe o menu quando o toggle for ativado */
     .nav-toggle:checked ~ .nav-links {
       display: flex;
     }
-}
+  }
+
 /* Media Queries para Responsividade */
 @media (max-width: 1100px) {
     .rifas, .video-section {
