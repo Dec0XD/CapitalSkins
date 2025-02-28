@@ -359,7 +359,7 @@
     padding: 4rem 2rem;
     border-radius: 10px;
     max-width: 100%;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 /* Título */
@@ -379,9 +379,7 @@
 
 /* Imagens */
 .sobre-nos img {
-    width: 100%;
-    max-width: 300px; 
-    height: auto;
+    width: 30%;
 }
 
 /* Responsividade */
@@ -436,4 +434,3 @@
         height: auto;
     }
 }
-
