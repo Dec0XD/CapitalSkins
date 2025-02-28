@@ -73,6 +73,9 @@
     height: auto;
     position: relative;
     z-index: 2;
+    background-image: url('../img/2.png');
+    background-size: 120%;
+    background-position: center;
 }
 
 /* Seção Vídeo */
@@ -383,6 +386,7 @@
     max-width: 300px; 
     height: auto;
 }
+
 
 /* Responsividade */
 @media (max-width: 768px) {
