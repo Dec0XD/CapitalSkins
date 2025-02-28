@@ -1,61 +1,292 @@
-/* Ajustes para telas menores */
-@media (max-width: 768px) {
-    .video-container {
-        flex-direction: column;
-        padding: 1rem;
-        align-items: center;
-        text-align: center;
+/* Responsividade do navbar para telas menores */
+@media screen and (max-width: 768px) {
+    .navbar {
+      flex-direction: row; /* Mantém em linha para hamburguer e logo */
+      justify-content: space-between; /* Hamburguer à esquerda, logo à direita */
+      align-items: center;
+      padding: 1rem;
+    }
+  
+    /* Menu hamburguer à esquerda */
+    .nav-toggle-label {
+      display: block;
+      cursor: pointer;
+      width: 40px;
+      height: 30px;
+      position: relative;
+      order: -1; /* Garante que o hamburguer fique antes do logo */
+    }
+  
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      content: '';
+      background: white;
+      height: 4px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      transition: all 0.3s;
+    }
+  
+    .nav-toggle-label span {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
+    .nav-toggle-label span::before {
+      top: -12px;
+    }
+  
+    .nav-toggle-label span::after {
+      top: 12px;
+    }
+  
+    /* Logo à direita */
+    .logo {
+      order: 1; /* Coloca o logo depois do hamburguer */
+    }
+  
+    .logo img {
+      max-height: 120px;
+    }
+  
+    /* Esconde o menu por padrão */
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      position: static; /* Volta ao fluxo normal */
+      transform: none; /* Remove centralização */
+      margin-top: 1rem; /* Espaço entre o header e o menu */
+    }
+  
+    /* Exibe o menu quando o toggle for ativado */
+    .nav-toggle:checked ~ .nav-links {
+      display: flex;
+    }
+  }
+
+/* Media Queries para Responsividade */
+@media (max-width: 1100px) {
+    .rifas, .video-section {
+        background-size: auto 100%;
+        background-position: center;
+        min-height: auto; /* Ajustado para se adaptar ao conteúdo */
     }
 
-    .video-text {
-        max-width: 90%;
+    .rifas-content, .video-container {
+        width: 90%;
+        max-width: none;
+    }
+
+    .video-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
         text-align: center;
+        align-items: center;
+        justify-content: center;
+        min-height: auto; /* Ajustado para se adaptar ao conteúdo */
+    }
+
+    .hero-texto {
+        margin-right: 0;
+        max-width: 90%;
+    }
+
+    .hero-texto h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-texto p {
+        font-size: 1.2rem;
+        max-width: 100%;
+    }
+
+    .hero-texto button {
+        font-size: 1.3rem;
+        padding: 0.2rem 1.5rem;
+    }
+
+    .hero-imagem {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-imagem img {
+        max-width: 80%;
+        height: auto;
+    }
+
+    .rifas-content h1 {
+        font-size: 2rem;
+    }
+
+    .rifas-content p {
+        font-size: 1.2rem;
+    }
+
+    .rifas-content button {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
     }
 
     .video-text h1 {
         font-size: 2rem;
-        margin-bottom: 10px;
     }
 
     .video-text p {
-        font-size: 1.2rem;
-        line-height: 1.5;
+        font-size: 1.25rem;
     }
 
-    .video-content iframe {
+    .video-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .video-content {
+        margin-right: 0;
+    }
+
+    .sobre-nos div {
+        flex-direction: column;
+    }
+
+    .sobre-nos img {
         width: 90%;
-        max-width: 560px;
-        aspect-ratio: 16/9; 
+        max-width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    
-    .video-content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 12rem;
+    .hero {
+        min-height: auto;
+        padding: 1rem;
+    }
+
+    .hero-texto h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-texto p {
+        font-size: 1rem;
+    }
+
+    .hero-texto button {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+        margin-top: 10px;
+    }
+
+    .hero-imagem img {
+        max-width: 70%;
+    }
+
+    .rifas {
+        min-height: auto;
+        padding: 1rem;
+    }
+
+    .rifas-content {
+        padding: 1rem;
+    }
+
+    .rifas-content h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .rifas-content p {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    .rifas-content button {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+        margin-top: 10px;
+    }
+
+    .video-section {
+        min-height: auto;
+        padding: 1rem;
+    }
+
+    .video-container {
+        gap: 1rem;
     }
 
     .video-text {
-        max-width: 90%;
-        text-align: center;
+        min-width: 100%;
+        padding: 1rem;
     }
 
     .video-text h1 {
         font-size: 1.5rem;
-        margin-right: 12rem;
     }
 
     .video-text p {
         font-size: 1rem;
-        margin: 0 auto;
-        margin-right: 12rem;
     }
 
-    .video-content iframe {
-        width: 100%; 
-        max-width: 560px; 
+    .video-wrapper {
+        max-width: 100%;
+    }
+
+    .comunidade {
+        padding: 2rem 1rem;
+    }
+
+    .comunidade h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .comunidade-container {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .comunidade-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .comunidade-item > a {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+        margin-top: 10px;
+    }
+
+    .sobre-nos {
+        padding: 2rem 1rem;
+    }
+
+    .sobre-nos h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .sobre-nos img {
+        width: 80%;
+    }
+}
+
+/* Ajuste para telas grandes (desktop) */
+@media (min-width: 1101px) {
+    .hero, .rifas, .video-section {
+        min-height: auto; /* Garante que a altura se ajuste ao conteúdo */
+        padding: 3rem 2rem; /* Ajuste leve para desktop */
+    }
+
+    .comunidade, .sobre-nos {
+        padding: 3rem 2rem; /* Reduzido de 4rem para consistência */
     }
 }
